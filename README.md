@@ -4,17 +4,11 @@
   <em>Build effective agents with Model Context Protocol using simple, composable patterns.</em>
 </p>
 
-<p align="center">
-  <a href="https://github.com/modl-ai/modl/tree/main/examples" target="_blank"><strong>Examples</strong></a>
-  |
-  <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank"><strong>Building Effective Agents</strong></a>
-  |
-  <a href="https://modelcontextprotocol.io/introduction" target="_blank"><strong>MCP</strong></a>
-</p>
+
 
 ## Overview
 
-**`modl`** is a framework for building AI agents using [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP). It provides a structured way to manage context in LLM-powered applications, making them more reliable and maintainable.
+**`modl`** is a framework for building AI agents using [Model Context Protocol](MCP). It provides a structured way to manage context in LLM-powered applications, making them more reliable and maintainable.
 
 ### What is Model Context Protocol (MCP)?
 
