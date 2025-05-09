@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "modl Configuration Schema",
+  "description": "Schema for modl configuration files",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to the schema file"
+    },
+    "logger": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+          "description": "Logging level"
+        },
+        "transports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["console", "file"]
+          },
+          "description": "Logging transports"
+        },
+        "path": {
+          "type": "string",
+          "description": "Path to log file",
+          "default": "logs/modl-{unique_id}.jsonl"
+        }
+      },
+      "required": ["level", "transports"]
+    },
+    "mcp": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "enum": ["filesystem", "web", "codebase"],
+          "description": "MCP command to execute"
+        },
+        "args": {
+          "type": "object",
+          "properties": {
+            "directories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Directories to process"
+            }
+          }
+        }
+      },
+      "required": ["command"]
+    },
+    "openai": {
+      "type": "object",
+      "properties": {
+        "default_model": {
+          "type": "string",
+          "description": "Default OpenAI model to use"
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Temperature for model sampling"
+        }
+      }
+    },
+    "otel": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable OpenTelemetry"
+        },
+        "service_name": {
+          "type": "string",
+          "description": "Service name for OpenTelemetry",
+          "default": "modl"
+        },
+        "service_instance_id": {
+          "type": "string",
+          "description": "Service instance ID for OpenTelemetry"
+        },
+        "service_version": {
+          "type": "string",
+          "description": "Service version for OpenTelemetry"
+        },
+        "otlp_endpoint": {
+          "type": "string",
+          "description": "OTLP endpoint for OpenTelemetry"
+        },
+        "console_debug": {
+          "type": "boolean",
+          "description": "Enable console debug for OpenTelemetry"
+        },
+        "sample_rate": {
+          "type": "number",
+          "description": "Sample rate for OpenTelemetry"
+        }
+      }
+    },
+    "usage_telemetry": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable usage telemetry"
+        },
+        "enable_detailed_telemetry": {
+          "type": "boolean",
+          "description": "Enable detailed telemetry"
+        }
+      }
+    }
+  },
+  "required": ["logger", "mcp"]
+} 

@@ -1,0 +1,6 @@
+# Core framework dependency
+modl @ file://../../../  # Link to the local modl project root
+
+# Additional dependencies specific to this example
+openai
+streamlit

@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.rulers": []
+  },
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/lastmile-ai/modl/main/schema/modl.config.schema.json": [
+      "modl.config.yaml",
+      "modl_agent.config.yaml",
+      "modl.secrets.yaml"
+    ]
+  }
+}
