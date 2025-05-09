@@ -8,7 +8,7 @@
 
 ## Overview
 
-**`modl`** is a framework for building AI agents using [Model Context Protocol](MCP). It provides a structured way to manage context in LLM-powered applications, making them more reliable and maintainable.
+**`modl`** is a framework for building AI agents using Model Context Protocol. It provides a structured way to manage context in LLM-powered applications, making them more reliable and maintainable.
 
 ### What is Model Context Protocol (MCP)?
 
